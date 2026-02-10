@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Todo List</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="light">
+    <div class="todo-card">
+
+        <header class="todo-header">
+            <div class="todo-title">
+                <img src="./images/checklist-icon.png" alt="checklist" class="clipboard-icon">
+                <h1>My Todo List</h1>
+            </div>
+            <select id="theme-select" class="theme-select">
+                <option value="light">light</option>
+                <option value="dark">dark</option>
+            </select>
+        </header>
+
+        <div class="add-row">
+            <input type="text" id="todo-input" class="todo-input" placeholder="Add new...">
+            <button id="add-btn" class="add-btn">+ Add</button>
+        </div>
+
+        <div class="filter-row">
+            <div class="search-box">
+                <img src="./images/magnifying-glass-solid-full.svg" alt="search" class="search-icon">
+                <input type="text" id="search-input" class="search-input" placeholder="Search...">
+            </div>
+            <select id="filter-select" class="filter-select">
+                <option value="all">All</option>
+                <option value="active">Active</option>
+                <option value="completed">Completed</option>
+            </select>
+        </div>
+
+        <div class="task-list" id="task-list"></div>
+
+        <hr class="divider">
+        <p class="total-counter" id="total-counter">Total: 0</p>
+
+        <div class="action-buttons">
+            <button class="action-btn" id="set-all-completed-btn">Set All Completed</button>
+            <button class="action-btn" id="clear-completed-btn">Clear All Completed</button>
+            <button class="action-btn" id="clear-all-btn">Clear All</button>
+        </div>
+
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
