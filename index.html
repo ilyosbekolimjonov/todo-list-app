@@ -5,49 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Todo List</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./images/crosshair.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./output.css">
 </head>
 
-<body class="light">
-    <div class="todo-card">
+<body
+    class="light min-h-screen flex justify-center items-center font-[Segoe_UI,Tahoma,Geneva,Verdana,sans-serif] bg-[#f0f8f8] dark:bg-gray-900">
+    <div
+        class="relative w-full max-w-[750px] py-[30px] px-[35px] rounded-2xl bg-white text-gray-800 animate-glow-light dark:bg-linear-to-br dark:from-[#1e293b] dark:to-[#1a2332] dark:text-gray-200 dark:animate-glow-dark">
 
-        <header class="todo-header">
-            <div class="todo-title">
-                <img src="./images/checklist-icon.png" alt="checklist" class="clipboard-icon">
-                <h1>My Todo List</h1>
+        <header class="flex justify-between items-center mb-6">
+            <div class="flex items-center gap-3">
+                <img src="./images/checklist-icon.png" alt="checklist" class="w-10 h-10">
+                <h1 class="text-[28px] font-semibold">My Todo List</h1>
             </div>
-            <select id="theme-select" class="theme-select">
+            <select id="theme-select"
+                class="py-1.5 px-3.5 rounded-lg text-sm cursor-pointer outline-none bg-gray-100 border border-gray-300 text-gray-800 dark:bg-[#2d3748] dark:border-[#4a5568] dark:text-gray-200">
                 <option value="light">light</option>
                 <option value="dark">dark</option>
             </select>
         </header>
 
-        <div class="add-row">
-            <input type="text" id="todo-input" class="todo-input" placeholder="Add new...">
-            <button id="add-btn" class="add-btn">+ Add</button>
+        <div class="flex gap-3 mb-[18px]">
+            <input type="text" id="todo-input"
+                class="flex-1 py-3.5 px-[18px] rounded-[10px] text-[17px] outline-none bg-gray-100 border border-gray-300 text-gray-800 placeholder:text-gray-400 placeholder:font-medium focus:border-green-500 dark:bg-[#2d3748] dark:border-[#4a5568] dark:text-gray-200 dark:placeholder:text-gray-500"
+                placeholder="Add new...">
+            <button id="add-btn"
+                class="py-3.5 px-[30px] border-none rounded-[10px] text-[17px] font-bold text-white cursor-pointer whitespace-nowrap bg-[#20b2aa] hover:bg-[#1a9e97] dark:bg-indigo-500 dark:hover:bg-indigo-400">+
+                Add</button>
         </div>
 
-        <div class="filter-row">
-            <div class="search-box">
-                <img src="./images/magnifying-glass-solid-full.svg" alt="search" class="search-icon">
-                <input type="text" id="search-input" class="search-input" placeholder="Search...">
+        <div class="flex gap-3 mb-5">
+            <div class="flex-1 relative flex items-center">
+                <img src="./images/magnifying-glass-solid-full.svg" alt="search"
+                    class="absolute left-3.5 w-4 h-4 pointer-events-none [filter:invert(40%)] dark:[filter:invert(55%)_sepia(10%)_saturate(300%)_hue-rotate(180deg)]">
+                <input type="text" id="search-input"
+                    class="w-full py-3 pl-[42px] pr-4 rounded-[10px] text-[16px] outline-none bg-gray-100 border border-gray-300 text-gray-800 placeholder:text-gray-400 placeholder:font-medium focus:border-green-500 dark:bg-[#2d3748] dark:border-[#4a5568] dark:text-gray-200 dark:placeholder:text-gray-500"
+                    placeholder="Search...">
             </div>
-            <select id="filter-select" class="filter-select">
+            <select id="filter-select"
+                class="py-3 px-[18px] rounded-[10px] text-[15px] cursor-pointer outline-none min-w-[140px] bg-gray-100 border border-gray-300 text-gray-800 dark:bg-[#2d3748] dark:border-[#4a5568] dark:text-gray-200">
                 <option value="all">All</option>
                 <option value="active">Active</option>
                 <option value="completed">Completed</option>
             </select>
         </div>
 
-        <div class="task-list" id="task-list"></div>
+        <div class="max-h-[340px] overflow-y-auto mb-1" id="task-list"></div>
 
-        <hr class="divider">
-        <p class="total-counter" id="total-counter">Total: 0</p>
+        <hr class="border-0 border-t border-gray-300 mt-2 mb-2.5 dark:border-[#4a5568]">
+        <p class="text-[15px] mb-4 font-medium" id="total-counter">Total: 0</p>
 
-        <div class="action-buttons">
-            <button class="action-btn" id="set-all-completed-btn">Set All Completed</button>
-            <button class="action-btn" id="clear-completed-btn">Clear All Completed</button>
-            <button class="action-btn" id="clear-all-btn">Clear All</button>
+        <div class="flex gap-3">
+            <button
+                class="flex-1 py-3.5 px-2.5 border-none rounded-[10px] text-[15px] font-semibold cursor-pointer bg-[#20b2aa] text-white hover:bg-[#1a9e97] dark:bg-indigo-600 dark:text-gray-200 dark:hover:bg-indigo-500"
+                id="set-all-completed-btn">Set All Completed</button>
+            <button
+                class="flex-1 py-3.5 px-2.5 border-none rounded-[10px] text-[15px] font-semibold cursor-pointer bg-[#20b2aa] text-white hover:bg-[#1a9e97] dark:bg-indigo-600 dark:text-gray-200 dark:hover:bg-indigo-500"
+                id="clear-completed-btn">Clear All Completed</button>
+            <button
+                class="flex-1 py-3.5 px-2.5 border-none rounded-[10px] text-[15px] font-semibold cursor-pointer bg-[#20b2aa] text-white hover:bg-[#1a9e97] dark:bg-indigo-600 dark:text-gray-200 dark:hover:bg-indigo-500"
+                id="clear-all-btn">Clear All</button>
         </div>
 
     </div>
