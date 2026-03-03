@@ -12,7 +12,7 @@
 <body
     class="light min-h-screen flex justify-center items-center font-[Segoe_UI,Tahoma,Geneva,Verdana,sans-serif] bg-[#f0f8f8] dark:bg-gray-900">
     <div
-        class="relative w-full max-w-[750px] py-[30px] px-[35px] rounded-2xl bg-white text-gray-800 animate-glow-light dark:bg-linear-to-br dark:from-[#1e293b] dark:to-[#1a2332] dark:text-gray-200 dark:animate-glow-dark">
+        class="relative w-full max-w-187.5 py-7.5 px-8.75 rounded-2xl bg-white text-gray-800 animate-glow-light dark:bg-linear-to-br dark:from-[#1e293b] dark:to-[#1a2332] dark:text-gray-200 dark:animate-glow-dark">
 
         <header class="flex justify-between items-center mb-6">
             <div class="flex items-center gap-3">
@@ -26,12 +26,12 @@
             </select>
         </header>
 
-        <div class="flex gap-3 mb-[18px]">
+        <div class="flex gap-3 mb-4.5">
             <input type="text" id="todo-input"
-                class="flex-1 py-3.5 px-[18px] rounded-[10px] text-[17px] outline-none bg-gray-100 border border-gray-300 text-gray-800 placeholder:text-gray-400 placeholder:font-medium focus:border-green-500 dark:bg-[#2d3748] dark:border-[#4a5568] dark:text-gray-200 dark:placeholder:text-gray-500"
+                class="flex-1 py-3.5 px-4.5 rounded-[10px] text-[17px] outline-none bg-gray-100 border border-gray-300 text-gray-800 placeholder:text-gray-400 placeholder:font-medium focus:border-green-500 dark:bg-[#2d3748] dark:border-[#4a5568] dark:text-gray-200 dark:placeholder:text-gray-500"
                 placeholder="Add new...">
             <button id="add-btn"
-                class="py-3.5 px-[30px] border-none rounded-[10px] text-[17px] font-bold text-white cursor-pointer whitespace-nowrap bg-[#20b2aa] hover:bg-[#1a9e97] dark:bg-indigo-500 dark:hover:bg-indigo-400">+
+                class="py-3.5 px-7.5 border-none rounded-[10px] text-[17px] font-bold text-white cursor-pointer whitespace-nowrap bg-[#20b2aa] hover:bg-[#1a9e97] dark:bg-indigo-500 dark:hover:bg-indigo-400">+
                 Add</button>
         </div>
 
@@ -40,18 +40,18 @@
                 <img src="./images/magnifying-glass-solid-full.svg" alt="search"
                     class="absolute left-3.5 w-4 h-4 pointer-events-none [filter:invert(40%)] dark:[filter:invert(55%)_sepia(10%)_saturate(300%)_hue-rotate(180deg)]">
                 <input type="text" id="search-input"
-                    class="w-full py-3 pl-[42px] pr-4 rounded-[10px] text-[16px] outline-none bg-gray-100 border border-gray-300 text-gray-800 placeholder:text-gray-400 placeholder:font-medium focus:border-green-500 dark:bg-[#2d3748] dark:border-[#4a5568] dark:text-gray-200 dark:placeholder:text-gray-500"
+                    class="w-full py-3 pl-10.5 pr-4 rounded-[10px] text-[16px] outline-none bg-gray-100 border border-gray-300 text-gray-800 placeholder:text-gray-400 placeholder:font-medium focus:border-green-500 dark:bg-[#2d3748] dark:border-[#4a5568] dark:text-gray-200 dark:placeholder:text-gray-500"
                     placeholder="Search...">
             </div>
             <select id="filter-select"
-                class="py-3 px-[18px] rounded-[10px] text-[15px] cursor-pointer outline-none min-w-[140px] bg-gray-100 border border-gray-300 text-gray-800 dark:bg-[#2d3748] dark:border-[#4a5568] dark:text-gray-200">
+                class="py-3 px-4.5 rounded-[10px] text-[15px] cursor-pointer outline-none min-w-35 bg-gray-100 border border-gray-300 text-gray-800 dark:bg-[#2d3748] dark:border-[#4a5568] dark:text-gray-200">
                 <option value="all">All</option>
                 <option value="active">Active</option>
                 <option value="completed">Completed</option>
             </select>
         </div>
 
-        <div class="max-h-[340px] overflow-y-auto mb-1" id="task-list"></div>
+        <div class="max-h-85 overflow-y-auto mb-1" id="task-list"></div>
 
         <hr class="border-0 border-t border-gray-300 mt-2 mb-2.5 dark:border-[#4a5568]">
         <p class="text-[15px] mb-4 font-medium" id="total-counter">Total: 0</p>
@@ -69,7 +69,12 @@
         </div>
 
     </div>
-    <script src="./script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/todoService.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
